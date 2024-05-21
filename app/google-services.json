@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1065951405825",
+    "project_id": "melodystream-c1025",
+    "storage_bucket": "melodystream-c1025.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065951405825:android:9e30861da73980461f9d00",
+        "android_client_info": {
+          "package_name": "com.erikzhou.melodystream"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfznnA_ThV9rzqENOLLXTW1YAMgBSrbpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
