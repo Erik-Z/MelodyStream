@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.erikzhou.melodystream.presentation.CategoriesCarousel
 import com.erikzhou.melodystream.presentation.HorizontalCarousel
 import com.erikzhou.melodystream.presentation.Toolbar
 import com.erikzhou.melodystream.ui.theme.MelodyStreamTheme

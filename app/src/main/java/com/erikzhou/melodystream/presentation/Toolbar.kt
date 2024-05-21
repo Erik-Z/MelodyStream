@@ -61,27 +61,6 @@ fun Toolbar() {
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-fun CategoriesCarousel() {
-    val categories = listOf("Category 1", "Category 2", "Category 3", "Category 4")
-
-    val pagerState = rememberPagerState {
-        categories.size
-    }
-
-    HorizontalPager(
-        state = pagerState,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 16.dp, bottom = 16.dp),
-        contentPadding = PaddingValues(horizontal = 16.dp),
-        pageSpacing = 16.dp
-    ) { page ->
-        CategoryCard(category = categories[page])
-    }
-}
-
 @Composable
 fun CategoryCard(category: String) {
     Card(
@@ -117,7 +96,7 @@ fun HorizontalCarousel(
     ) {
         items(items) { item ->
             // Replace with your custom item layout
-            Text(text = item.toString())
+            CategoryCard(category = item.toString())
         }
     }
 }
