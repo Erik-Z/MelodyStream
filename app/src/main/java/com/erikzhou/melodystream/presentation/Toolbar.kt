@@ -2,8 +2,10 @@ package com.erikzhou.melodystream.presentation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -30,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.erikzhou.melodystream.R
 
 @Composable
@@ -62,23 +65,38 @@ fun Toolbar() {
 }
 
 @Composable
-fun CategoryCard(category: String) {
-    Card(
+fun CategoryCard(
+    category: String,
+    modifier: Modifier = Modifier
+) {
+    Column(
         modifier = Modifier
-            .width(100.dp)
-            .height(100.dp),
-        shape = RoundedCornerShape(8.dp)
+            .fillMaxSize()
+            .background(color = Color.White),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
+        Card(
+            modifier = modifier
+                .width(100.dp)
+                .height(100.dp),
+            shape = RoundedCornerShape(8.dp)
         ) {
-            Text(
-                text = category,
-                style = MaterialTheme.typography.headlineSmall,
-                color = Color.Black
+            AsyncImage(
+                model = "https://firebasestorage.googleapis.com/v0/b/melodystream-c1025.appspot.com/o/category_images%2Fcategory_chinese.png?alt=media&token=ce30a915-197e-474e-afbf-0f008e50092e",
+                contentDescription = "Translated description of what the image contains",
+                modifier = Modifier
+                    .width(100.dp)
+                    .height(100.dp)
             )
         }
+
+        Text(
+            text = category,
+            style = MaterialTheme.typography.headlineSmall,
+            color = Color.Black,
+            modifier = Modifier.padding(top = 4.dp)
+        )
     }
 }
 
