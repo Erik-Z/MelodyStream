@@ -16,16 +16,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.erikzhou.melodystream.presentation.HorizontalCarousel
+import com.erikzhou.melodystream.models.CategoryModel
+import com.erikzhou.melodystream.presentation.CategoryCarousel
 import com.erikzhou.melodystream.presentation.Toolbar
 import com.erikzhou.melodystream.ui.theme.MelodyStreamTheme
+import com.erikzhou.melodystream.viewModels.CategoryViewModel
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val categoryViewModel = CategoryViewModel()
         setContent {
             MelodyStreamTheme {
+
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -33,9 +39,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Column(){
                         Toolbar()
-                        val items = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4")
-
-                        HorizontalCarousel(items = items)
+                        CategoryCarousel(items = categoryViewModel.categories)
                     }
                 }
             }
